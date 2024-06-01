@@ -3,8 +3,6 @@ let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 
-// port sur lequel le serveur va tourner
-let port = process.env.PORT || 8010;
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -41,6 +39,9 @@ app.use(function (req, res, next) {
 // Pour les formulaires
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+// port sur lequel le serveur va tourner
+let port = process.env.PORT || 8010;
 
 
 // les routes
